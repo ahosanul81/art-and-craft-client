@@ -11,6 +11,7 @@ const SignUp = () => {
     const {createUser, updateUserProfile} = useContext(TextileContext)
     
 
+
     const handleSignUp = (e) =>{
         e.preventDefault()
         const form = e.target;
