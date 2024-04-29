@@ -5,6 +5,8 @@ import { TextileContext } from '../../Context/TextileProvider';
 const Category = () => {
     const {setCatEmbroidery} = useContext(TextileContext)
   
+
+    
     return (
         <div className='container mx-auto mb-9 '>
             <div className='flex  justify-center text-center mb-9'>
