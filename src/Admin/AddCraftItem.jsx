@@ -26,7 +26,7 @@ const AddCraftItem = () => {
         console.log(craftItem);
 
         // send craft item data to server 
-        fetch('http://localhost:5000/craft_items', {
+        fetch('https://art-and-craft-server-alpha.vercel.app/craft_items', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ const AddCraftItem = () => {
                     timer: 1000,
                 });
             })
-        //     fetch('http://localhost:5000/craft_items', {
+        //     fetch('https://art-and-craft-server-alpha.vercel.app/craft_items', {
         //     method: 'POST', 
         //     headers: {
         //         'Content-Type': 'application/json'

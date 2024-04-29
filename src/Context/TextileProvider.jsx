@@ -14,7 +14,7 @@ const TextileProvider = ({ children }) => {
     const [catEmbroidery, setCatEmbroidery] = useState('emboi')
 
     useEffect(() => {
-        fetch('http://localhost:5000/craft_items')
+        fetch('https://art-and-craft-server-alpha.vercel.app/craft_items')
             .then(res => res.json())
             .then(data => {
                 setCraftItems(data)

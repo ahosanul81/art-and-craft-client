@@ -19,11 +19,13 @@ import CraftDetails from './Components/Pages/CraftDetails.jsx';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import AllArtCraftItem from './Components/Pages/AllArtCraftItem.jsx';
 import CategoryBasedItem from './Components/Pages/CategoryBasedItem.jsx';
+import Error from './Components/Pages/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootFile></RootFile>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -48,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "/craft_item_detail/:id",
         element: <ProtectedRoute><CraftDetails></CraftDetails></ProtectedRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/craft_item_detail/${params.id}`)
+        loader: ({params})=> fetch(`https://art-and-craft-server-alpha.vercel.app/craft_item_detail/${params.id}`)
       },
       {
         path: "/add_craft_item",
@@ -57,7 +59,7 @@ const router = createBrowserRouter([
       {
         path: "/update_craft_item/:id",
         element: <UpdateCraftItem></UpdateCraftItem>,
-        loader: ({params})=> fetch(`http://localhost:5000/update_craft_item/${params.id}`) 
+        loader: ({params})=> fetch(`https://art-and-craft-server-alpha.vercel.app/update_craft_item/${params.id}`) 
       },
       {
         path: "/my_art_and_craft",

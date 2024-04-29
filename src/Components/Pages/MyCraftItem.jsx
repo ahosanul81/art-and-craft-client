@@ -15,7 +15,7 @@ const MyCraftItem = () => {
     console.log(customized);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/craft_items/${user.email}`)
+        fetch(`https://art-and-craft-server-alpha.vercel.app/craft_items/${user.email}`)
         .then(res=> res.json())
         .then(data=> {
             console.log(data);
@@ -28,7 +28,7 @@ const MyCraftItem = () => {
 
 
 
-    
+
     return (
         <div>
             <h2 className='text-3xl text-amber-500 font-bold text-center mb-6'>We have aesthetic and different type of craft items</h2>

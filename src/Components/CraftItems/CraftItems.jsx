@@ -28,7 +28,7 @@ const CraftItems = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/craft_items/${_id}`, {
+                fetch(`https://art-and-craft-server-alpha.vercel.app/craft_items/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
