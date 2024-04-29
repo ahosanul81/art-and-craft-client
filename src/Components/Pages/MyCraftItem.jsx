@@ -25,6 +25,10 @@ const MyCraftItem = () => {
 
 
 
+
+
+
+    
     return (
         <div>
             <h2 className='text-3xl text-amber-500 font-bold text-center mb-6'>We have aesthetic and different type of craft items</h2>
