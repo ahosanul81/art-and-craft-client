@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body{
+    /* height: 100vh; */
+    min-height: 100vh;
+    background-color: #0e425f;
+}
+.banner-img1{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/TqY1KRy/nathana-reboucas-i-CPa-Pcs-O-m-M-unsplash.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+   
+}
+.banner-img2{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/PGhyb6v/malavika-1u-Lt8p8e0zs-unsplash.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.banner-img3{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/C7GdBnV/istockphoto-2037323391-1024x1024.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.banner-img4{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/y50mh5j/istockphoto-1488245840-1024x1024.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.banner-img5{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/xLnbQGr/istockphoto-495577008-1024x1024.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+.banner-img6{
+    background: linear-gradient(rgba(6, 6, 6, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://i.ibb.co/PDXjdgd/istockphoto-157612839-1024x1024.jpg");;
+    /* background-image: url("./resources/Banner-Image.png"); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.swipper{
+    height: 300px;
+}
