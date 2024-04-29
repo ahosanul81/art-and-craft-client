@@ -23,9 +23,7 @@ const MyCraftItem = () => {
         })
     },[user])
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/craft_items/${}`)
-    }, [])
+
 
     return (
         <div>

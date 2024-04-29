@@ -3,7 +3,7 @@ import { TextileContext } from '../../Context/TextileProvider';
 
 const CategoryBasedItem = () => {
     const {catEmbroidery} = useContext(TextileContext)
-    console.log(catEmbroidery, 'category based ');
+
  
    
     return (
