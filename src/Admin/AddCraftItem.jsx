@@ -1,9 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { TextileContext } from '../Context/TextileProvider';
 
 const AddCraftItem = () => {
     const {user} = useContext(TextileContext)
+
+    const [subCategoryName, setSubCategoryName] = useState('');
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const handleDropdownSelect = (item) => {
+        setSubCategoryName(item);
+        setDropdownOpen(false);
+    };
 
     const handleAddCraft = (e) => {
         e.preventDefault()
@@ -83,9 +90,30 @@ const AddCraftItem = () => {
                             <input type="number" name="price" id="price" placeholder="Price" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-amber-400" />
                         </div>
 
-                        <div className="space-y-1 text-sm w-full">
+                        <div className="relative space-y-1 text-sm w-full">
                             <label htmlFor="quality" className="block text-amber-500">Sub-category name</label>
-                            <input type="text" name="subCategoryName" id="subCategoryName" placeholder="Sub-category" className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-amber-400" />
+                            <input 
+                            type="text" 
+                            name="subCategoryName" 
+                            id="subCategoryName"
+                            placeholder="Sub-category" 
+                            className="w-full px-4 py-3 rounded-md border-gray-300 bg-gray-50 text-gray-800 focus:border-amber-400"
+                            onChange={(e) => setSubCategoryName(e.target.value)}
+                            onFocus={() => setDropdownOpen(true)}
+                            value={subCategoryName}
+                            />
+                            {dropdownOpen && (
+                            <div className="absolute top-full bg-white w-full border border-gray-300 rounded-b-md shadow-md z-10">
+                                <ul className="py-1">
+                                    <li onClick={() => handleDropdownSelect('Embroidery')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Embroidery</li>
+                                    <li onClick={() => handleDropdownSelect('Knitting & Crocheting')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Knitting & Crocheting</li>
+                                    <li onClick={() => handleDropdownSelect('Quilting')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Quilting</li>
+                                    <li onClick={() => handleDropdownSelect('Tie-Dyeing')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Tie-Dyeing</li>
+                                    <li onClick={() => handleDropdownSelect('Macrame')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Macrame</li>
+                                    <li onClick={() => handleDropdownSelect('Beadwork')} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Beadwork</li>
+                                </ul>
+                            </div>
+                        )}
                         </div>
                         <div className="space-y-1 text-sm w-full">
                             <label htmlFor="price" className="block text-amber-500">Rating</label>

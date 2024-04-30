@@ -10,8 +10,9 @@ const githubProvider = new GithubAuthProvider()
 const TextileProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [craftItems, setCraftItems] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [catEmbroidery, setCatEmbroidery] = useState('emboi')
+    const [loading, setLoading] = useState(true)
+    const [categoryArt, setCategoryArt] = useState(null)
+
 
     useEffect(() => {
         fetch('https://art-and-craft-server-alpha.vercel.app/craft_items')
@@ -52,16 +53,17 @@ const TextileProvider = ({ children }) => {
 
 
 
-    const unSubscribe = onAuthStateChanged(auth, currentUser => {
-        if (currentUser) {
-            setUser(currentUser)
-            console.log(currentUser, 'observing the user');
-            setLoading(false)
-        }
-        else {
-            return unSubscribe()
-        }
-    })
+    useEffect(()=>{
+        const unSubscribe = onAuthStateChanged(auth, currentUser=>{
+             setUser(currentUser)
+             console.log('user is existing and observing ', currentUser);
+             setLoading(false)
+             console.log(loading, 'observer');
+         })
+         return(()=>{
+             unSubscribe()
+         })    
+     })
 
     const textileInfo = {
         createUser,
@@ -74,10 +76,11 @@ const TextileProvider = ({ children }) => {
         loading,
         setLoading,
         loginWIthGithub,
-        catEmbroidery,
-        setCatEmbroidery
-
+        categoryArt, 
+        setCategoryArt
     }
+
+    
     return (
         <div>
             <TextileContext.Provider value={textileInfo}>

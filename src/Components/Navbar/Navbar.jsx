@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { TextileContext } from '../../Context/TextileProvider';
 import Swal from 'sweetalert2';
-
+import { Tooltip } from 'react-tooltip'
 const Navbar = () => {
     const { logOutUser, user } = useContext(TextileContext)
     const navigate = useNavigate()
@@ -13,6 +13,8 @@ const Navbar = () => {
         <li><NavLink to="/all_art_and_crafts">All Art & crafts</NavLink></li>
         <li><NavLink to="/add_craft_item">Add Craft Item</NavLink></li>
         <li><NavLink to="/my_art_and_craft">My Art & Craft</NavLink></li>
+        <li><NavLink to="/up_coming_item">Up coming item</NavLink></li>
+        <li><NavLink to="/our_scholars">Our scholars</NavLink></li>
     </>
 
     const handleSignOut = () => {

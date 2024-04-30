@@ -18,8 +18,10 @@ import UpdateCraftItem from './Admin/UpdateCraftItem.jsx';
 import CraftDetails from './Components/Pages/CraftDetails.jsx';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import AllArtCraftItem from './Components/Pages/AllArtCraftItem.jsx';
-import CategoryBasedItem from './Components/Pages/CategoryBasedItem.jsx';
 import Error from './Components/Pages/Error.jsx';
+import UpComing from './Components/Pages/UpComing.jsx';
+import Scholars from './Components/Pages/Scholars.jsx';
+import CategoryBased from './Components/CategoryBased/CategoryBased.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,10 +33,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>
       },
-      {
-        path: "/category_based_item",
-        element: <CategoryBasedItem></CategoryBasedItem>
-      },
+    
       {
         path: "/login",
         element: <Login></Login>
@@ -46,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "/all_art_and_crafts",
         element: <AllArtCraftItem></AllArtCraftItem>
+      },
+      {
+        path: "/category_based_item",
+        element: <CategoryBased></CategoryBased>
       },
       {
         path: "/craft_item_detail/:id",
@@ -64,6 +67,14 @@ const router = createBrowserRouter([
       {
         path: "/my_art_and_craft",
         element: <ProtectedRoute><MyCraftItem></MyCraftItem></ProtectedRoute>,
+      },
+      {
+        path: "/up_coming_item",
+        element: <UpComing></UpComing>,
+      },
+      {
+        path: "/our_scholars",
+        element: <Scholars></Scholars>,
       },
     ]
   },
